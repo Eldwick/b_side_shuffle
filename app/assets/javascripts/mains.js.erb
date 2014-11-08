@@ -1,0 +1,49 @@
+var ready = function () {
+  $("#header").hide()
+  $('.active').text()
+  $('#fullpage').fullpage({
+      anchors: ['welcome', 'home', 'gallery', 'contact'],
+      menu: '#myMenu'
+  });
+
+  $('#fullpage').on("mousewheel", function () {
+    if($('.active .id').text() == "Splash"){
+      $("#header").fadeOut(600)
+    } else {
+      $("#header").fadeIn(600)
+    }
+  })
+
+
+  SC.initialize({
+    client_id: "244505f87a73ac8cd18d47fe5abadafa"
+  });
+
+  var is_playing = false,
+    sound;
+
+  SC.stream("/tracks/133312661", function(obj){
+    obj.play();
+    sound = obj;
+    is_playing = true;
+  });
+
+  function player(){
+    if( sound ) {
+      if(is_playing) {
+          sound.pause();
+          is_playing = false;
+      } else {
+          sound.play();
+          is_playing = true;
+      }
+    }
+  }
+
+  $(".pause-play-button").on("click", function() {
+    player();
+  });
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

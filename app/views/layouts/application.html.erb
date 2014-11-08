@@ -25,48 +25,18 @@
         </a>
       </div>
       <div class="collapse navbar-collapse">
-        <ul id="navLinks" class="nav navbar-nav navbar-right">
-          <li><a href="/register">Songs</a></li>
-          <li><a href="/signin">Artists</a></li>
-          <li><a href="/signin">About Us</a></li>
+        <ul id="myMenu" class="nav navbar-nav navbar-right">
+              <li data-menuanchor="firstPage" class="active"><a href="#welcome">Welcome</a></li>
+              <li data-menuanchor="secondPage"><a href="#home">Home</a></li>
+              <li data-menuanchor="thirdPage"><a href="#gallery">Gallery</a></li>
+              <li data-menuanchor="fourthPage"><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </header>
-  <button class="pause-play-button">
-    Music<br />on/off
-  </button>
+
 <%= yield %>
   <script src="http://connect.soundcloud.com/sdk.js"></script>
-  <script>
-  
-  SC.initialize({
-    client_id: "<%= ENV["soundcloud_client_id"] %>"
-  });
-
-  var is_playing = false,
-    sound;
-  SC.stream("/tracks/133312661", function(obj){
-    obj.play();
-    sound = obj;
-    is_playing = true;
-  });
-  function player(){
-    if( sound ) {
-      if(is_playing) {
-          sound.pause();
-          is_playing = false;
-      } else {
-          sound.play();
-          is_playing = true;
-      }
-    }
-  }
-
-  $(".pause-play-button").on("click", function() {
-    player();
-  });
-  </script>
   
 </body>
 </html>

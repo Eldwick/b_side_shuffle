@@ -1,13 +1,16 @@
 <div id="fullpage">
-    <div class="section red active" id="record">
+    <div class="section red active" id="record" data-anchor="welcome">
       <%= render "svgs/recordspin" %>
     </div>
-    <div class="section content">
+    <div class="section content" data-anchor="home">
       <%= render "home" %>
     </div>
-    <div class="section content">
+    <div class="section content gallery" data-anchor="gallery">
+
       <%= render "gallery" %>
     </div>
-    <div class="section content">Some section</div>
+    <div class="section content contact" data-anchor="contact">
+      <%= render "contact" %>
+    </div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
