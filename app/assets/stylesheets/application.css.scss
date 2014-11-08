@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+body{
+  height: 100%;
+  min-height: 100%;
+}
