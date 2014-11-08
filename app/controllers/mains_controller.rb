@@ -4,7 +4,8 @@ class MainsController < ApplicationController
   # GET /mains
   # GET /mains.json
   def index
-    @mains = Main.all
+    @events = Main.upcomingShows
+    @blogPosts = Main.recentBlogPosts
   end
 
   # GET /mains/1

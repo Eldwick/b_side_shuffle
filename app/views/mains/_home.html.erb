@@ -1,0 +1,59 @@
+<div class="home">
+  <div class="homeTop">
+    <div class="homeVideo">
+      <div class="videoBox">
+        <iframe width="854" height="510" src="//www.youtube.com/embed/n4nX0gGS6v0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="upcomingShows">
+      <div class="showsBox">
+        <h2>Upcoming Shows</h2>
+        <table class="table table-hover">
+          <thead>
+            <th>Date</th>
+            <th>Venue</th>
+            <th>City</th>
+          </thead>
+          <tbody>
+            <% @events.each do |event| %>
+            <tr>
+              <td><%= event[:date] %> </td>
+              <td><%= event[:venue] %> </td>
+              <td><%= event[:area] %> </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <a href="http://www.songkick.com/artists/6404794-b-side-shuffle" class="btn btn-danger" target="blank">Tickets</a>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="homeMiddle">
+   <div class="emailListText">
+    Sign up for free download of "song name" / Promotion here
+   </div>
+   <div class="emailListSubmit">
+    <input type="text" name="email" placeholder="Join the Mailing List" class="form-control">
+   </div>
+  </div>
+
+  <div class="homeBottom">
+    <div class="blogLeft">
+      <img src="<%=@blogPosts[0][:img]%>" height="120px">
+      <div class="blogText">
+        <h4> <%=@blogPosts[0][:title]%> </h4>
+        <p> <%=@blogPosts[0][:body]%>...<a href="<%=@blogPosts[0][:link]%>">READ MORE</a></p>
+      </div>
+    </div>
+    <div class="blogRight">
+      <img src="<%=@blogPosts[1][:img]%>" height="120px">
+      <div class="blogText">
+        <h4> <%=@blogPosts[1][:title]%> </h4>
+        <p> <%=@blogPosts[1][:body]%>...<a href="<%=@blogPosts[1][:link]%>">READ MORE</a></p>
+      </div>
+    </div>
+  </div>
+</div>

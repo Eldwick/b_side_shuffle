@@ -2,12 +2,16 @@
 <html>
 <head>
   <title>BSideShuffle</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Syncopate:400,700' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://www.google.com/jsapi"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <link rel="shortcut icon" href="http://33.media.tumblr.com/avatar_cf16254fdf81_128.png">
 </head>
 <body>
-  <header class="navbar navbar-default navbar-fixed-top hidden" id='header'>
+  <header class="navbar navbar-fixed-top" id='header'>
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,7 +21,7 @@
                 <span class="icon-bar"></span>
               </button>
         <a id="logoHeader"class="navbar-brand" href="/">
-          B-Side Shuffle
+          <%= image_tag("navLogo.png", size:"60x60") %> 
         </a>
       </div>
       <div class="collapse navbar-collapse">

@@ -1,16 +1,14 @@
 var ready = function () {
+  $("#header").hide()
   $('.active').text()
   $('#fullpage').fullpage();
-  $('.active').on("mousewheel", function () {
+  $('#fullpage').on("mousewheel", function () {
     if($('.active h1').text() == "Splash"){
-      $("#header").hide()
+      $("#header").fadeOut(600)
     } else {
-      $("#header").fadeIn("slow")
+      $("#header").fadeIn(600)
     }
   })
-
-
-
 }
 
 $(document).ready(ready);
