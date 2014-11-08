@@ -133,14 +133,16 @@ iframe {
     @extend .col-md-6;
   }
 }
-.red {
-  h1 {
-    margin-top: 0;
+
+.gallery {
+  img {
+    max-height: 100px;
   }
 }
 
-.blue {
+.galleryImage:hover {
+  background-color: red;
+  height: auto;
 }
-
 .green {
 }
