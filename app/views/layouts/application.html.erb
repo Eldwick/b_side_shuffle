@@ -33,7 +33,40 @@
       </div>
     </div>
   </header>
+  <button class="pause-play-button">
+    Music<br />on/off
+  </button>
 <%= yield %>
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
+  <script>
+  
+  SC.initialize({
+    client_id: "<%= ENV["soundcloud_client_id"] %>"
+  });
 
+  var is_playing = false,
+    sound;
+  SC.stream("/tracks/133312661", function(obj){
+    obj.play();
+    sound = obj;
+    is_playing = true;
+  });
+  function player(){
+    if( sound ) {
+      if(is_playing) {
+          sound.pause();
+          is_playing = false;
+      } else {
+          sound.play();
+          is_playing = true;
+      }
+    }
+  }
+
+  $(".pause-play-button").on("click", function() {
+    player();
+  });
+  </script>
+  
 </body>
 </html>
