@@ -47,10 +47,10 @@
   var is_playing = false,
     sound;
   SC.stream("/tracks/133312661", function(obj){
-        obj.play();
-        sound = obj;
-        is_playing = true;
-    });
+    obj.play();
+    sound = obj;
+    is_playing = true;
+  });
   function player(){
     if( sound ) {
       if(is_playing) {
@@ -67,5 +67,6 @@
     player();
   });
   </script>
+  
 </body>
 </html>
