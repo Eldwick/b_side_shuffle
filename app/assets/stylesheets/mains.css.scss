@@ -3,9 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-#header {
 
-  opacity: 0.7;
+#header {
   margin-bottom: 0;
   padding-bottom: 0;
   background-color: #585AA8;
@@ -15,6 +14,7 @@
   a {
     color: yellow;
     font-family: 'Syncopate', sans-serif;
+    font-weight: bold;
   }
   .navbar-header {
     a {
@@ -28,10 +28,19 @@
 iframe {
   background-color: rgba(0, 0, 0, 0.4);  
 }
-
+#myMenu {
+  a {
+    font-size: 30px;
+  }
+  li{
+    margin-right: 30px;
+    margin-top: 10px;
+  }
+}
 .content {
   @extend .container;
   font-family: 'Syncopate', sans-serif;
+  font-weight: bold;
   width: 100%;
   background-color: #FCF69F;
   h1 {
@@ -42,6 +51,9 @@ iframe {
   padding-right: 20px;
 }
 
+.contact {
+  margin-top: 30px;
+}
 .home {
   @extend .container-fluid;
   margin-right: 30px;
@@ -134,9 +146,20 @@ iframe {
   }
 }
 
+.image-wrapper {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.pause-play-button {
+  margin-top: 90px;
+  z-index: 100;
+}
+
 .gallery {
   img {
-    max-height: 100px;
+    height: 130px;
   }
 }
 

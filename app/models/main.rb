@@ -53,6 +53,6 @@ class Main < ActiveRecord::Base
     images.each do |img|
       images_array << img[:src]
     end
-    images_array[0..40]
+    images_array[0..25]
   end
 end
