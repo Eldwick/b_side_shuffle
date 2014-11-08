@@ -1,6 +1,8 @@
 <h2>Gallery</h2>
 
 <% @galleryImages.each do |image|  %>
-  <img src="<%= image %>" max-height="100px"> 
+<a href="<%= image %>">
+  <img src="<%= image %>" max-height="100px" href="<%= image %>" class="galImages">
+  </a> 
 <% end %>
 

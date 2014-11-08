@@ -6,6 +6,10 @@ var ready = function () {
       menu: '#myMenu'
   });
 
+  $('.galImages').click(function() {
+      window.document.location = $(this).attr("href");
+  });
+
   $('#fullpage').on("mousewheel", function () {
     if($('.active .id').text() == "Splash"){
       $("#header").fadeOut(600)
