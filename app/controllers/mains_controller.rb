@@ -6,6 +6,7 @@ class MainsController < ApplicationController
   def index
     @events = Main.upcomingShows
     @blogPosts = Main.recentBlogPosts
+    @galleryImages = Main.gallery
   end
 
   # GET /mains/1

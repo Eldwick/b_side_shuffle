@@ -42,4 +42,17 @@ class Main < ActiveRecord::Base
 
     [article1, article2]
   end
+
+  def self.gallery
+    link = open("http://imgur.com/a/GzInE/layout/blog")
+
+    doc = Nokogiri::HTML(link)
+
+    images = doc.css(".main .panel #image-container .textbox img")
+    images_array = []
+    images.each do |img|
+      images_array << img[:src]
+    end
+    images_array[0..40]
+  end
 end
